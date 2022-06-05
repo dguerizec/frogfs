@@ -484,6 +484,7 @@ ssize_t frogfs_faccess(frogfs_file_t *f, void **buf)
     assert(f != NULL);
 
     if (f->fh->compression != FROGFS_COMPRESSION_NONE) {
+        printf("File is compressed\n");
         return -1;
     }
     *buf = f->raw_start;
